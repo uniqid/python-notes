@@ -1,0 +1,21 @@
+Installation
+    1.https://www.python.org/ftp/python/2.7.11/python-2.7.11.msi
+    2.https://sourceforge.net/projects/cx-freeze/files/4.3.3/cx_Freeze-4.3.3.win32-py2.7.msi/download
+
+    Build standalone executables(without console):
+    cxfreeze script.py --target-dir dist --base-name=Win32GUI
+
+    Note:
+        - py2exe:报模块丢失
+        - pyinstaller: 可以打包成单一可执行文件，但是杀毒软件报木马
+
+Tutorial
+
+    1.http://www.runoob.com/python/python-tutorial.html
+    2.https://docs.python.org/2/tutorial/index.html
+
+
+GUI
+    tkinter
+    PySide
+    wxPython
