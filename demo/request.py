@@ -1,8 +1,9 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+__author__ = 'Jacky Yu <jacky325@qq.com>'
 
 from Tkinter import *
-import urllib,urllib2
+import urllib,urllib2,uniqid.fun
 from json import *
 from time import sleep
 
@@ -56,7 +57,7 @@ master = Tk()
 
 #def Gui init
 master.title("Http request v1.0")
-master.iconbitmap('D:/web/code/python/python.ico')
+master.iconbitmap(uniqid.fun.get_cur_path() + '/img/python.ico')
 master.resizable(False, False)
 
 #To be center

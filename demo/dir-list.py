@@ -1,7 +1,8 @@
 #!/usr/bin/python
 # -*- coding: UTF-8 -*-
+__author__ = 'Jacky Yu <jacky325@qq.com>'
 
-import os
+import os, uniqid.fun
 from time import sleep
 from Tkinter import *
 
@@ -12,7 +13,7 @@ class DirList(object):
         self.window.title("Directory list V1.0")
         self.window.resizable(False, False)
         self.window.geometry('500x420')
-        self.window.iconbitmap('D:/web/code/python/python.ico')
+        self.window.iconbitmap(uniqid.fun.get_cur_path() + '/img/python.ico')
         
         self.frameDirList         = Frame(self.window)
         self.frameDirListScollBar = Scrollbar(self.frameDirList)
