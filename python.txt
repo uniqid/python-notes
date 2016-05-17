@@ -3,7 +3,7 @@ Installation
     2.https://sourceforge.net/projects/cx-freeze/files/4.3.3/cx_Freeze-4.3.3.win32-py2.7.msi/download
 
     Build standalone executables(without console):
-    cxfreeze script.py --target-dir dist --base-name=Win32GUI
+    cxfreeze script.py --target-dir dist --base-name=Win32GUI --icon=logo.ico
 
     Note:
         - py2exe:报模块丢失
@@ -19,3 +19,9 @@ GUI
     tkinter
     PySide
     wxPython
+
+
+Editor
+    Notepad++ 
+        cmd /k D: & cd "$(CURRENT_DIRECTORY)" & python "$(FULL_CURRENT_PATH)" & PAUSE & EXIT
+
