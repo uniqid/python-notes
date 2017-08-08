@@ -20,7 +20,7 @@ def http_submit():
     try:
         param = {"username":Username.get()}
 
-        filepath = uniqid.fun.get_cur_path()+'/pb.pem'
+        filepath = uniqid.fun.get_cur_path()+'/cfg/pb.pem'
         if not os.path.isfile(filepath):
             filepath = False
         param['password'] = uniqid.fun.base64_encode(uniqid.fun.encrypt(Password.get(), filepath))
@@ -88,7 +88,7 @@ master = Tk()
 
 #def Gui init
 master.title("Token request V1.0")
-master.iconbitmap(uniqid.fun.get_cur_path() + '/logo.ico')
+master.iconbitmap(uniqid.fun.get_cur_path() + '/img/python.ico')
 master.resizable(False, False)
 
 #To be center
@@ -124,7 +124,7 @@ Button( # submit button : row=4
 ServerURL.insert(END, "http://server1.com/login")
 ServerURL.insert(END, "http://server2.com/login")
 ServerURL.select_set((0,)) #This only sets focus on the first item.
-ServerURL.event_generate("<<ListboxSelect>>")
+#ServerURL.event_generate("<<ListboxSelect>>")
 Username.insert(END, "username")
 Password.insert(END, "password")
 

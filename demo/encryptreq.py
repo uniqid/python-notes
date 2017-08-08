@@ -15,7 +15,7 @@ def http_submit():
         param = eval(Parameter.get(0.0, END))
         jsons = eval(Parameter.get(0.0, END))
         if not Password.get() == '':
-            filepath = uniqid.fun.get_cur_path()+'/pb.pem'
+            filepath = uniqid.fun.get_cur_path()+'/cfg/pb.pem'
             if not os.path.isfile(filepath):
                 filepath = False
 
@@ -39,7 +39,7 @@ def http_submit():
         req = urllib2.urlopen(ServerURL.get(), urllib.urlencode(param))
         txt = req.read()
         try:
-            txt = dumps(JSONDecoder().decode(txt), indent = 4)
+            txt = dumps(JSONDecoder().decode(txt), indent = 4, ensure_ascii=False)
         except:
             pass
     except:
