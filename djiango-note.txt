@@ -1,0 +1,56 @@
+### Djiango ###
+
+1. create a site project
+
+    cd /path/to/current
+    django-admin startproject mysite
+
+2. create db
+    cd /path/to/mysite
+    python manage.py migrate
+
+3. run a server
+   python manage.py runserver  0.0.0.0:8000
+
+4. create a module: polls
+   python manage.py startapp polls
+
+   append following code to model.py
+   -------------------------------------------------------------
+        class Question(models.Model):
+            question_text = models.CharField(max_length=200)
+            pub_date = models.DateTimeField('date published')
+
+
+        class Choice(models.Model):
+            question = models.ForeignKey(Question)
+            choice_text = models.CharField(max_length=200)
+            votes = models.IntegerField(default=0)
+   -------------------------------------------------------------
+
+   append polls to INSTALLED_APPS in settings.py
+   -------------------------------------------------------------
+        INSTALLED_APPS = [
+            'django.contrib.admin',
+            'django.contrib.auth',
+            'django.contrib.contenttypes',
+            'django.contrib.sessions',
+            'django.contrib.messages',
+            'django.contrib.staticfiles',
+            'polls',
+        ]
+   -------------------------------------------------------------
+   python manage.py makemigrations polls
+   python manage.py sqlmigrate polls 0001
+   python manage.py migrate
+
+   for api: python manage.py shell
+    
+5. create a administrator account
+   
+   python manage.py createsuperuser
+
+   # Register models in admin.py, append the following code it.
+   from .models import Question,Choice
+   admin.site.register(Question)
+   admin.site.register(Choice)
